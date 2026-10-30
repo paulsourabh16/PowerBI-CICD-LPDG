@@ -1,6 +1,10 @@
 table VW_DIM_LOCATION
 	lineageTag: d29b0ed5-034c-4c18-a644-8d27b6bf1aa6
 
+	measure 'git measure' = 1
+		formatString: 0
+		lineageTag: bffe6a63-74a2-4cd1-bccf-f0438db50df4
+
 	column LOCATION
 		dataType: string
 		lineageTag: 5f90c378-3b66-48d1-ab83-3bb6c0c9d753
