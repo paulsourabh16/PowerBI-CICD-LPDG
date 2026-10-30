@@ -1,0 +1,32 @@
+cultureInfo en-IN
+
+	linguisticMetadata =
+			{
+			  "Version": "1.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "vw_dim_location.location": {
+			      "Binding": {
+			        "ConceptualEntity": "VW_DIM_LOCATION",
+			        "ConceptualProperty": "LOCATION"
+			      },
+			      "State": "Generated"
+			    },
+			    "vw_dim_sensor_data.sensor_code": {
+			      "Binding": {
+			        "ConceptualEntity": "VW_DIM_SENSOR_DATA",
+			        "ConceptualProperty": "SENSOR_CODE"
+			      },
+			      "State": "Generated"
+			    },
+			    "vw_dim_sensor_mapping.sensor_code": {
+			      "Binding": {
+			        "ConceptualEntity": "VW_DIM_SENSOR_MAPPING",
+			        "ConceptualProperty": "SENSOR_CODE"
+			      },
+			      "State": "Generated"
+			    }
+			  }
+			}
+		contentType: json
+

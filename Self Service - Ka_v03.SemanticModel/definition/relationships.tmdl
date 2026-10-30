@@ -1,0 +1,16 @@
+relationship ddca7264-0941-50ba-56fe-3d99c7b12a1b
+	fromColumn: VW_TOP_LEVEL_COMBINED.DATE
+	toColumn: Date.Date
+
+relationship 47bc908e-e003-4312-a557-592cd1950c51
+	fromColumn: VW_TOP_LEVEL_COMBINED.LOCATION
+	toColumn: VW_DIM_LOCATION.LOCATION
+
+relationship fdde77f8-a008-e5ca-e850-31a487948e77
+	fromColumn: VW_RAW_DATA.DATE
+	toColumn: Date.Date
+
+relationship 978966a8-43b2-450b-95dd-04f01fd9d85e
+	fromColumn: VW_RAW_DATA.SENSOR_KEY
+	toColumn: VW_DIM_SENSOR_MAPPING.SENSOR_KEY
+

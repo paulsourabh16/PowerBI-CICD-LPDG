@@ -1,0 +1,114 @@
+table VW_TOP_LEVEL_CALCULATIONS_DAILY
+	isHidden
+	lineageTag: 2700c1ca-2b59-4e7e-acdb-2bd6be62d45d
+
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 10abdd2c-dd62-4c0f-a736-41ba9195ea39
+		summarizeBy: none
+		sourceColumn: DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column LOCATION
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2caa90f8-209b-4dba-abc6-3aa85b19b0b6
+		summarizeBy: none
+		sourceColumn: LOCATION
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GESAMTWARMEVERBRAUCH
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 77af9657-2b18-4a81-aa5d-3aabb173af0c
+		summarizeBy: sum
+		sourceColumn: GESAMTWARMEVERBRAUCH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GESAMTSTROMVERBRAUCH
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 02dffa5e-98d0-4e77-82d2-104f52699d41
+		summarizeBy: sum
+		sourceColumn: GESAMTSTROMVERBRAUCH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GESAMTGASVERBRAUCH
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 82ca6a46-71c7-42c5-9929-12cad61f676a
+		summarizeBy: sum
+		sourceColumn: GESAMTGASVERBRAUCH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GESAMTTHERMALWASSERVERBRAUCH
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: b3d1c0f7-3dc7-4d82-8125-f10f6675da88
+		summarizeBy: sum
+		sourceColumn: GESAMTTHERMALWASSERVERBRAUCH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GESAMTWASSERVERBRAUCH
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: f12765b6-8dda-4f3d-be25-ff6af32c8e63
+		summarizeBy: sum
+		sourceColumn: GESAMTWASSERVERBRAUCH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition VW_TOP_LEVEL_CALCULATIONS_DAILY = m
+		mode: directQuery
+		source =
+				let
+				    Source = Snowflake.Databases("A4055261542271-KANNEWISCHER.snowflakecomputing.com","WH_PROD",[Implementation="2.0"]),
+				    DEV_DB_ANALYTICS_Database = Source{[Name="DEV_DB_ANALYTICS",Kind="Database"]}[Data],
+				    REP_MART_Schema = DEV_DB_ANALYTICS_Database{[Name="REP_MART",Kind="Schema"]}[Data],
+				    VW_TOP_LEVEL_CALCULATIONS_DAILY_View = REP_MART_Schema{[Name="VW_TOP_LEVEL_CALCULATIONS_DAILY",Kind="View"]}[Data]
+				in
+				    VW_TOP_LEVEL_CALCULATIONS_DAILY_View
+
+	changedProperty = IsHidden
+

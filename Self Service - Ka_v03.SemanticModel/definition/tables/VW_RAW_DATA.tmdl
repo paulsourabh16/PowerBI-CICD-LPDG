@@ -1,0 +1,66 @@
+table VW_RAW_DATA
+	lineageTag: 5c5a5a85-0e6b-46b3-85fb-0fe0289343f7
+
+	column DATE
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: d28655dd-2874-4f66-80ec-233466449b90
+		summarizeBy: none
+		sourceColumn: DATE
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALCULATED_METRIC_VALUE
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 9e85b62c-9d7a-4b41-b0b4-868a1173f9cd
+		summarizeBy: sum
+		sourceColumn: CALCULATED_METRIC_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LOGGING_VALUE
+		dataType: double
+		formatString: 0.0
+		sourceProviderType: decimal(38, 8)
+		lineageTag: 5423bf8d-9604-4528-98ce-728a0dc7360c
+		summarizeBy: sum
+		sourceColumn: LOGGING_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOGGING_TS
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: eda8f919-13b8-4f4b-83f2-3a7099278082
+		summarizeBy: none
+		sourceColumn: LOGGING_TS
+
+		annotation SummarizationSetBy = Automatic
+
+	column SENSOR_KEY
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: cca03d44-60e5-4f7c-a7c8-fd36bfcd9baf
+		summarizeBy: none
+		sourceColumn: SENSOR_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition VW_RAW_DATA = m
+		mode: directQuery
+		source =
+				let
+				  Source = Snowflake.Databases("a4055261542271-kannewischer.snowflakecomputing.com", "WH_PROD", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null, Implementation = "2.0"]),
+				  #"Navigation 1" = Source{[Name = "DEV_DB_ANALYTICS", Kind = "Database"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[Name = "REP_MART", Kind = "Schema"]}[Data],
+				  #"Navigation 3" = #"Navigation 2"{[Name = "VW_RAW_DATA", Kind = "View"]}[Data]
+				in
+				  #"Navigation 3"
+

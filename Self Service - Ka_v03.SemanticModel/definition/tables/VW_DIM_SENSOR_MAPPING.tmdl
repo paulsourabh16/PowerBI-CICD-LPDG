@@ -1,0 +1,237 @@
+table VW_DIM_SENSOR_MAPPING
+	lineageTag: 0c4f0f04-9b69-4de4-8b00-6146d972e62b
+
+	column SENSOR_KEY
+		dataType: string
+		lineageTag: 194b6652-cd9a-469d-b644-29cd6be5237b
+		summarizeBy: none
+		sourceColumn: SENSOR_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column THERME_CODE
+		dataType: string
+		lineageTag: 0218eb79-500b-4065-b3bf-f8979dcb505c
+		summarizeBy: none
+		sourceColumn: THERME_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SENSOR_CODE
+		dataType: string
+		lineageTag: c34c8c38-a11b-46a5-95c5-13051d085b3f
+		summarizeBy: none
+		sourceColumn: SENSOR_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SENSOR_NAME
+		dataType: string
+		lineageTag: e867bb9f-bd1c-4b49-a798-1d1d8f3e97de
+		summarizeBy: none
+		sourceColumn: SENSOR_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEBAUDEART
+		dataType: string
+		lineageTag: bb5ad7e0-275f-4d9a-b92b-def26fb60141
+		summarizeBy: none
+		sourceColumn: GEBAUDEART
+
+		annotation SummarizationSetBy = Automatic
+
+	column STANDORT
+		dataType: string
+		lineageTag: a7b609b6-769a-4ce9-9fae-bdd775d47cca
+		summarizeBy: none
+		sourceColumn: STANDORT
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEWERK
+		dataType: string
+		lineageTag: 67de4e76-97d1-4f90-9d1f-c2295237039b
+		summarizeBy: none
+		sourceColumn: GEWERK
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEDIUM_1_EBENE
+		dataType: string
+		lineageTag: 7d16bf00-214e-43cb-90ec-d5c95e0ab247
+		summarizeBy: none
+		sourceColumn: MEDIUM_1_EBENE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEDIUM_2_EBENE
+		dataType: string
+		lineageTag: e5d3a704-73fc-4149-a1e2-5d15b651a68d
+		summarizeBy: none
+		sourceColumn: MEDIUM_2_EBENE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEDIUM_3_EBENE
+		dataType: string
+		lineageTag: 0fda8f5c-fc21-49e1-8219-05e3cf337e56
+		summarizeBy: none
+		sourceColumn: MEDIUM_3_EBENE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZONE
+		dataType: string
+		lineageTag: 6661a39a-4ca6-4355-9552-59dca867a531
+		summarizeBy: none
+		sourceColumn: ZONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RAUM
+		dataType: string
+		lineageTag: e02bfe24-17f7-42a1-8b65-2574b84c4c93
+		summarizeBy: none
+		sourceColumn: RAUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column BADEWASSERKATEGORIE
+		dataType: string
+		lineageTag: 67a06de2-b2d8-455d-b4cc-1879d57aa199
+		summarizeBy: none
+		sourceColumn: BADEWASSERKATEGORIE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BECKENTYP
+		dataType: string
+		lineageTag: b4f5b596-9ff6-4b76-91cc-02aedee96c9a
+		summarizeBy: none
+		sourceColumn: BECKENTYP
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANLAGE
+		dataType: string
+		lineageTag: ccd0d06e-16d9-44fc-a93e-b5be6b445860
+		summarizeBy: none
+		sourceColumn: ANLAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ART
+		dataType: string
+		lineageTag: 005b911b-3db5-455c-b60c-b021f642fd8a
+		summarizeBy: none
+		sourceColumn: ART
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZAHLERWERT
+		dataType: string
+		lineageTag: 06b4e18d-0566-4452-ab80-3bcb0fe77434
+		summarizeBy: none
+		sourceColumn: ZAHLERWERT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZAHLERTYP
+		dataType: string
+		lineageTag: 33b0fa1a-0c12-48f2-8b18-53f6650aac57
+		summarizeBy: none
+		sourceColumn: ZAHLERTYP
+
+		annotation SummarizationSetBy = Automatic
+
+	column EINHEIT
+		dataType: string
+		lineageTag: 5a5807a7-ee25-464e-bfcf-f2f3e42c8a47
+		summarizeBy: none
+		sourceColumn: EINHEIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column KPI_MULTIPLIER
+		dataType: double
+		lineageTag: 4508a71d-1c03-49c5-b74d-99c4683704c9
+		summarizeBy: none
+		sourceColumn: KPI_MULTIPLIER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CALCULATION_TYPE
+		dataType: string
+		lineageTag: 7a42e2ee-7f91-488a-b81b-6081655e47a8
+		summarizeBy: none
+		sourceColumn: CALCULATION_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_WARME
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 92900c0d-901b-4a10-b5d6-236d1ad4ff7b
+		summarizeBy: none
+		sourceColumn: IS_WARME
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_STROM
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6cf7e0b8-9c2f-44b8-abeb-83db51da489f
+		summarizeBy: none
+		sourceColumn: IS_STROM
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_GAS
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bf37eb9a-9af4-4166-a780-4780ea339265
+		summarizeBy: none
+		sourceColumn: IS_GAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_THERMAL
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c8dcdd02-4096-49f0-a8c9-562db6e3ea8e
+		summarizeBy: none
+		sourceColumn: IS_THERMAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_WASSER
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0c0a65e9-7f8b-441b-8183-563b3d88982f
+		summarizeBy: none
+		sourceColumn: IS_WASSER
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENERGY_CATEGORY
+		dataType: string
+		lineageTag: 008fd326-f332-41be-ae14-24640de16ec8
+		summarizeBy: none
+		sourceColumn: ENERGY_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition VW_DIM_SENSOR_MAPPING = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("A4055261542271-KANNEWISCHER.snowflakecomputing.com","WH_PROD",[Implementation="2.0"]),
+				    DEV_DB_ANALYTICS_Database = Source{[Name="DEV_DB_ANALYTICS",Kind="Database"]}[Data],
+				    REP_MART_Schema = DEV_DB_ANALYTICS_Database{[Name="REP_MART",Kind="Schema"]}[Data],
+				    VW_DIM_SENSOR_MAPPING_View = REP_MART_Schema{[Name="VW_DIM_SENSOR_MAPPING",Kind="View"]}[Data]
+				in
+				    VW_DIM_SENSOR_MAPPING_View
+

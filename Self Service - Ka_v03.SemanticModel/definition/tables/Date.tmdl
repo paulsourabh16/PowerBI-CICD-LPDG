@@ -1,0 +1,56 @@
+table Date
+	lineageTag: 7bfac051-7fe0-476b-b5a7-290b03080781
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: e79ae328-ba72-4de2-ba2a-da43196c756f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Year' = YEAR('Date'[Date])
+		formatString: 0
+		lineageTag: f60a1345-ba51-4a50-b0f8-dab803a777f5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Month' = MONTH('Date'[Date])
+		formatString: 0
+		lineageTag: cd957d9d-8483-4c1d-a249-4028861e5dd5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date day' = DAY('Date'[Date])
+		formatString: 0
+		lineageTag: f461f14f-08b8-44dc-be4c-5fc176839c69
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Date Year Hierarchy'
+		lineageTag: 0e573fdc-1d94-409e-b599-4cd9beba0398
+
+		level 'Date Year'
+			lineageTag: 212bc5de-0ebc-4f20-87fe-23a176129fc1
+			column: 'Date Year'
+
+		level 'Date Month'
+			lineageTag: f6043b67-015c-4242-a00b-3e8c6b90046a
+			column: 'Date Month'
+
+		level 'Date day'
+			lineageTag: fd5b2747-b11e-41a1-9634-22dd1ce8b8f1
+			column: 'Date day'
+
+	partition Date = calculated
+		mode: import
+		source = CALENDAR(01/01/2023,TODAY())
+
+	annotation PBI_Id = 4017bc27de5046cabe5d86c4a2e7be7d
+

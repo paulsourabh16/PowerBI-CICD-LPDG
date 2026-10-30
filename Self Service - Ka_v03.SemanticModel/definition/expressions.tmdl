@@ -1,0 +1,7 @@
+expression Table_name = "TBL_SENSOR_MAPPING" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: a1b42dab-8189-4801-bc58-7a4f91a267f0
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,65 @@
+table VW_TOP_LEVEL_COMBINED
+	lineageTag: 5bbf3473-2691-4dc2-ae53-08598fc24a36
+
+	column DATE
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 6378d9c6-dcac-4015-96bc-f1980e219414
+		summarizeBy: none
+		sourceColumn: DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column LOCATION
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 98d26c96-21e0-424a-a6f9-4f1d5dfcb790
+		summarizeBy: none
+		sourceColumn: LOCATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column KPI_NAME
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4e300624-40d4-4f28-ad3d-3629cd0fe916
+		summarizeBy: none
+		sourceColumn: KPI_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALUE
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 36d7e727-5927-4ea6-b5cd-ad151ecf74da
+		summarizeBy: sum
+		sourceColumn: VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DATA_SOURCE
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(17)
+		lineageTag: 5fdf42cf-f48e-4ce6-9986-4626cc3aa248
+		summarizeBy: none
+		sourceColumn: DATA_SOURCE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition VW_TOP_LEVEL_COMBINED = m
+		mode: directQuery
+		source =
+				let
+				    Source = Snowflake.Databases("A4055261542271-KANNEWISCHER.snowflakecomputing.com","WH_PROD",[Implementation="2.0"]),
+				    DEV_DB_ANALYTICS_Database = Source{[Name="DEV_DB_ANALYTICS",Kind="Database"]}[Data],
+				    REP_MART_Schema = DEV_DB_ANALYTICS_Database{[Name="REP_MART",Kind="Schema"]}[Data],
+				    VW_TOP_LEVEL_COMBINED_View = REP_MART_Schema{[Name="VW_TOP_LEVEL_COMBINED",Kind="View"]}[Data]
+				in
+				    VW_TOP_LEVEL_COMBINED_View
+

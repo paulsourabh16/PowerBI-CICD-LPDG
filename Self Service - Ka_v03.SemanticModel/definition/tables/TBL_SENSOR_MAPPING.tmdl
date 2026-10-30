@@ -1,0 +1,316 @@
+table TBL_SENSOR_MAPPING
+	isHidden
+	lineageTag: d090b18f-dbdf-4506-ba28-4b180c108a2b
+
+	column THERME_CODE
+		dataType: string
+		isHidden
+		lineageTag: 04cd8b70-e37a-429b-8015-87c82b4438f3
+		summarizeBy: none
+		sourceColumn: THERME_CODE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SENSOR_CODE
+		dataType: string
+		isHidden
+		lineageTag: bed90142-3466-4ea8-bf40-8670b6b6e3f5
+		summarizeBy: none
+		sourceColumn: SENSOR_CODE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SENSOR_DESC
+		dataType: string
+		isHidden
+		lineageTag: 20fe4992-713a-4b6f-899a-78704c15becd
+		summarizeBy: none
+		sourceColumn: SENSOR_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SENSOR_NAME
+		dataType: string
+		isHidden
+		lineageTag: 7d068079-cbe8-4f33-baba-3204460c39be
+		summarizeBy: none
+		sourceColumn: SENSOR_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEBAUDEART
+		dataType: string
+		isHidden
+		lineageTag: 7939f8db-e421-47ae-85c6-64c0a30aaeb8
+		summarizeBy: none
+		sourceColumn: GEBAUDEART
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column STANDORT
+		dataType: string
+		isHidden
+		lineageTag: feac0a8b-fe6f-4947-990b-77c704d1ace5
+		summarizeBy: none
+		sourceColumn: STANDORT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEWERK
+		dataType: string
+		isHidden
+		lineageTag: 3434018b-5fb7-46b8-83db-c5f77f911e5d
+		summarizeBy: none
+		sourceColumn: GEWERK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEDIUM_1_EBENE
+		dataType: string
+		isHidden
+		lineageTag: af6d99f2-5ee9-4f57-b8f6-0b065cb03de5
+		summarizeBy: none
+		sourceColumn: MEDIUM_1_EBENE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEDIUM_2_EBENE
+		dataType: string
+		isHidden
+		lineageTag: 3532198d-1c81-4dfd-bb34-c28eb287437f
+		summarizeBy: none
+		sourceColumn: MEDIUM_2_EBENE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MEDIUM_3_EBENE
+		dataType: string
+		isHidden
+		lineageTag: bc3bb68b-ddb8-44f7-b9e2-1c1dcb308652
+		summarizeBy: none
+		sourceColumn: MEDIUM_3_EBENE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZONE
+		dataType: string
+		isHidden
+		lineageTag: 2321b9fc-57c0-4b82-9f26-1fe2fb56b81f
+		summarizeBy: none
+		sourceColumn: ZONE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RAUM
+		dataType: string
+		isHidden
+		lineageTag: 72584f82-d73a-45ab-81b5-214d9b1b7383
+		summarizeBy: none
+		sourceColumn: RAUM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column BADEWASSERKATEGORIE
+		dataType: string
+		isHidden
+		lineageTag: 50a0a03b-8081-454c-8f52-c8fa243bdeef
+		summarizeBy: none
+		sourceColumn: BADEWASSERKATEGORIE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column BECKENTYP
+		dataType: string
+		isHidden
+		lineageTag: 37ee5a01-7177-4849-9ac6-dd5f428cea21
+		summarizeBy: none
+		sourceColumn: BECKENTYP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANLAGE
+		dataType: string
+		isHidden
+		lineageTag: f52c90ed-05fb-4882-a459-97d601971137
+		summarizeBy: none
+		sourceColumn: ANLAGE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ART
+		dataType: string
+		isHidden
+		lineageTag: a177afba-c50f-4c4e-a87a-fc57b2e560b7
+		summarizeBy: none
+		sourceColumn: ART
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZAHLERWERT
+		dataType: string
+		isHidden
+		lineageTag: e0cd1def-356f-4470-9a75-d443fa7098a5
+		summarizeBy: none
+		sourceColumn: ZAHLERWERT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZAHLERTYP
+		dataType: string
+		isHidden
+		lineageTag: 61d4d380-da21-48fc-96d7-2e0dc9f202f8
+		summarizeBy: none
+		sourceColumn: ZAHLERTYP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EINHEIT
+		dataType: string
+		isHidden
+		lineageTag: dde01f2e-83d8-4374-9cfe-40b2f13c7447
+		summarizeBy: none
+		sourceColumn: EINHEIT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column KPI_MULTIPLIER
+		dataType: double
+		isHidden
+		lineageTag: 2ad86b25-16ef-431c-93e7-9db2bef7d306
+		summarizeBy: sum
+		sourceColumn: KPI_MULTIPLIER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CALCULATION_TYPE
+		dataType: string
+		isHidden
+		lineageTag: 609eb8f9-5d16-4e1a-a855-f8861e5162b9
+		summarizeBy: none
+		sourceColumn: CALCULATION_TYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TR_LOAD_TS
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 2ac22068-1c1d-43f9-bd33-532e442b9e93
+		summarizeBy: none
+		sourceColumn: TR_LOAD_TS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_WARME
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: c6941d1c-e588-4e37-96c5-ccbb77a7b9af
+		summarizeBy: none
+		sourceColumn: IS_WARME
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_STROM
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 304e2d19-72fc-4583-8c8f-fc478b38d618
+		summarizeBy: none
+		sourceColumn: IS_STROM
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_GAS
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: ebdc0122-42e7-46e2-8b47-3f6f9c889a28
+		summarizeBy: none
+		sourceColumn: IS_GAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_THERMAL
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 18535215-545c-4f68-ba1b-e2617f0f3337
+		summarizeBy: none
+		sourceColumn: IS_THERMAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_WASSER
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: c05ac83c-3718-4da4-be2d-cd1f5a2a92c2
+		summarizeBy: none
+		sourceColumn: IS_WASSER
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TBL_SENSOR_MAPPING = m
+		mode: directQuery
+		source =
+				let
+				    Source = Snowflake.Databases("A4055261542271-KANNEWISCHER.snowflakecomputing.com","WH_PROD",[Implementation="2.0"]),
+				    DEV_DB_ANALYTICS_Database = Source{[Name="DEV_DB_ANALYTICS",Kind="Database"]}[Data],
+				    TR_CORE_Schema = DEV_DB_ANALYTICS_Database{[Name="TR_CORE",Kind="Schema"]}[Data],
+				    TBL_SENSOR_MAPPING_Table = TR_CORE_Schema{[Name=Table_name,Kind="Table"]}[Data]
+				in
+				    TBL_SENSOR_MAPPING_Table
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

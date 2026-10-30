@@ -1,0 +1,126 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 566.50784753363234,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "TBL_SENSOR_MAPPING",
+          "nodeLineageTag": "d090b18f-dbdf-4506-ba28-4b180c108a2b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 921.75,
+            "y": 541
+          },
+          "nodeIndex": "VW_TOP_LEVEL_CALCULATIONS_DAILY",
+          "nodeLineageTag": "2700c1ca-2b59-4e7e-acdb-2bd6be62d45d",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 864.5,
+            "y": 150
+          },
+          "nodeIndex": "Date",
+          "nodeLineageTag": "7bfac051-7fe0-476b-b5a7-290b03080781",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1128.5,
+            "y": 0
+          },
+          "nodeIndex": "VW_TOP_LEVEL_COMBINED",
+          "nodeLineageTag": "5bbf3473-2691-4dc2-ae53-08598fc24a36",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1140.9999694824219,
+            "y": 329.25
+          },
+          "nodeIndex": "VW_DIM_LOCATION",
+          "nodeLineageTag": "d29b0ed5-034c-4c18-a644-8d27b6bf1aa6",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1420,
+            "y": 56.75
+          },
+          "nodeIndex": "VW_RAW_DATA",
+          "nodeLineageTag": "5c5a5a85-0e6b-46b3-85fb-0fe0289343f7",
+          "size": {
+            "height": 466.25,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1717.9999237060547,
+            "y": 73
+          },
+          "nodeIndex": "VW_DIM_SENSOR_DATA",
+          "nodeLineageTag": "feec353a-1962-4de4-814f-26416e2c1987",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 2001.9999237060547,
+            "y": 244.5
+          },
+          "nodeIndex": "VW_DIM_SENSOR_MAPPING",
+          "nodeLineageTag": "0c4f0f04-9b69-4de4-8b00-6146d972e62b",
+          "size": {
+            "height": 823.67432735426019,
+            "width": 234
+          },
+          "zIndex": 8
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 72.37322515212982,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

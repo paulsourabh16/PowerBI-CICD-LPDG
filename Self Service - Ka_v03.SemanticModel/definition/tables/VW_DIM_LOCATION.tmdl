@@ -1,0 +1,36 @@
+table VW_DIM_LOCATION
+	lineageTag: d29b0ed5-034c-4c18-a644-8d27b6bf1aa6
+
+	column LOCATION
+		dataType: string
+		lineageTag: 5f90c378-3b66-48d1-ab83-3bb6c0c9d753
+		summarizeBy: none
+		sourceColumn: LOCATION
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOCATION_NAME
+		dataType: string
+		lineageTag: fadefee6-d7ea-4cf6-bd7f-200a44a445a6
+		summarizeBy: none
+		sourceColumn: LOCATION_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition VW_DIM_LOCATION = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("A4055261542271-KANNEWISCHER.snowflakecomputing.com","WH_PROD",[Implementation="2.0"]),
+				    DEV_DB_ANALYTICS_Database = Source{[Name="DEV_DB_ANALYTICS",Kind="Database"]}[Data],
+				    REP_MART_Schema = DEV_DB_ANALYTICS_Database{[Name="REP_MART",Kind="Schema"]}[Data],
+				    VW_DIM_LOCATION_View = REP_MART_Schema{[Name="VW_DIM_LOCATION",Kind="View"]}[Data]
+				in
+				    VW_DIM_LOCATION_View
+
+	changedProperty = IsHidden
+

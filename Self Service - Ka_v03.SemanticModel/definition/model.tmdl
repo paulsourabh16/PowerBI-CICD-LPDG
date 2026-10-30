@@ -1,0 +1,25 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["TBL_SENSOR_MAPPING","VW_TOP_LEVEL_CALCULATIONS_DAILY","VW_TOP_LEVEL_COMBINED","VW_DIM_LOCATION","VW_RAW_DATA","VW_DIM_SENSOR_DATA","VW_DIM_SENSOR_MAPPING","Table_name"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table TBL_SENSOR_MAPPING
+ref table VW_TOP_LEVEL_CALCULATIONS_DAILY
+ref table Date
+ref table VW_TOP_LEVEL_COMBINED
+ref table VW_DIM_LOCATION
+ref table VW_RAW_DATA
+ref table VW_DIM_SENSOR_DATA
+ref table VW_DIM_SENSOR_MAPPING
+
+ref cultureInfo en-IN
+

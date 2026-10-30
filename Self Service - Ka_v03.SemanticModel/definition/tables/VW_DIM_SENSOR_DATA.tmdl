@@ -1,0 +1,49 @@
+table VW_DIM_SENSOR_DATA
+	isHidden
+	lineageTag: feec353a-1962-4de4-814f-26416e2c1987
+
+	column SENSOR_CODE
+		dataType: string
+		isHidden
+		lineageTag: 0d776d4c-44be-4802-9eb9-e218a3afb2b8
+		summarizeBy: none
+		sourceColumn: SENSOR_CODE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SENSOR_DESC
+		dataType: string
+		isHidden
+		lineageTag: 770b0965-7d86-4301-9794-e601dd9417d2
+		summarizeBy: none
+		sourceColumn: SENSOR_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition VW_DIM_SENSOR_DATA = m
+		mode: import
+		source =
+				let
+				  Source = Snowflake.Databases("a4055261542271-kannewischer.snowflakecomputing.com", "WH_PROD", [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null, Implementation = "2.0"]),
+				  #"Navigation 1" = Source{[Name = "DEV_DB_ANALYTICS", Kind = "Database"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[Name = "REP_MART", Kind = "Schema"]}[Data],
+				  #"Navigation 3" = #"Navigation 2"{[Name = "VW_DIM_SENSOR_DATA", Kind = "View"]}[Data],
+				    #"Removed Duplicates" = Table.Distinct(#"Navigation 3", {"SENSOR_CODE"}),
+				    #"Removed Duplicates1" = Table.Distinct(#"Removed Duplicates", {"SENSOR_CODE"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Duplicates1", each [SENSOR_CODE] <> null and [SENSOR_CODE] <> "blank"),
+				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [SENSOR_CODE] <> "DDC4000_#01//01/202/00/00/P.28/CDO/k"),
+				    #"Removed Duplicates2" = Table.Distinct(#"Filtered Rows1", {"SENSOR_CODE"}),
+				    #"Removed Duplicates3" = Table.Distinct(#"Removed Duplicates2", {"SENSOR_CODE"})
+				in
+				    #"Removed Duplicates3"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
