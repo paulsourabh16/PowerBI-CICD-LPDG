@@ -1,0 +1,75 @@
+name: Update Power BI table parameter
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  update-table-name:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Update Table_name parameter
+        shell: pwsh
+        env:
+          TABLE_NAME: ${{ vars.TABLE_NAME }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:TABLE_NAME)) {
+            throw "Set the TABLE_NAME repository variable in Settings > Secrets and variables > Actions > Variables."
+          }
+          if ($env:TABLE_NAME.Contains("`r") -or $env:TABLE_NAME.Contains("`n")) {
+            throw "TABLE_NAME must be a single-line table name."
+          }
+
+          $parameterFile = "Self Service - Ka_v03.SemanticModel/definition/expressions.tmdl"
+          $content = [System.IO.File]::ReadAllText($parameterFile)
+          $pattern = '(?m)^expression Table_name = ".*" meta \[IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true\]\r?$'
+          $parameterMatches = [regex]::Matches($content, $pattern)
+
+          if ($parameterMatches.Count -ne 1) {
+            throw "Expected exactly one Table_name parameter expression in $parameterFile; found $($parameterMatches.Count)."
+          }
+
+          $value = $env:TABLE_NAME.Replace('"', '""')
+          $replacement = 'expression Table_name = "' + $value + '" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]'
+          $match = $parameterMatches[0]
+          $updated = $content.Substring(0, $match.Index) + $replacement + $content.Substring($match.Index + $match.Length)
+
+          if ($updated -cne $content) {
+            [System.IO.File]::WriteAllText($parameterFile, $updated, [System.Text.UTF8Encoding]::new($false))
+          }
+
+      - name: Commit parameter update
+        shell: pwsh
+        run: |
+          git diff --quiet -- "Self Service - Ka_v03.SemanticModel/definition/expressions.tmdl"
+          if ($LASTEXITCODE -eq 0) {
+            Write-Host "Table_name already matches TABLE_NAME; no commit is needed."
+            exit 0
+          }
+          if ($LASTEXITCODE -ne 1) {
+            throw "git diff failed with exit code $LASTEXITCODE."
+          }
+
+          git config user.name "github-actions[bot]"
+          if ($LASTEXITCODE -ne 0) {
+            throw "Could not configure the Git commit author."
+          }
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ($LASTEXITCODE -ne 0) {
+            throw "Could not configure the Git commit email."
+          }
+          git add -- "Self Service - Ka_v03.SemanticModel/definition/expressions.tmdl"
+          if ($LASTEXITCODE -ne 0) {
+            throw "Could not stage the updated parameter file."
+          }
+          git commit -m "Update Power BI Table_name parameter"
+          if ($LASTEXITCODE -ne 0) {
+            throw "git commit failed with exit code $LASTEXITCODE."
+          }
