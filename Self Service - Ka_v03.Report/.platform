@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Self Service - Ka_v03"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bda47cc4-2c5a-4fb5-8928-fe8e63abc692"
+  }
+}

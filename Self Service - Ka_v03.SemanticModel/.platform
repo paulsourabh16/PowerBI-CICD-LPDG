@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Self Service - Ka_v03"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ea6bc056-2e9f-4e7c-88ac-de237495b3c6"
+  }
+}
